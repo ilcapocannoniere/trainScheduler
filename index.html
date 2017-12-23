@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Scheduler</title>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- JQuery CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <!-- moment.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <!-- moment-duration-format plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-duration-format/1.3.0/moment-duration-format.min.js"></script>
+    <style type="text/css" >
+      h6{
+        background-color:powderblue ;
+        
+      }
+
+    </style>
+
+</head>
+<body>
+ <!-- To make the jumbotron full width and without the rounded corners, add the .jumbotron-fluid class, and nest a container inside the jumbotron.-->
+    <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-3">Anytime is Train Time</h1>
+            <p class="lead" align="center">Choo Choo. Chee Chee.</p>
+          </div>
+    </div> 
+    <div class="jumbotron jumbotron-fluid">     
+      <table class="table">
+          <div>
+            <h6 >Current Train Schedule </h6>
+          </div>
+          <thead>
+            <tr>
+                  <th scope="col">Train Name</th>
+                  <th scope="col">Destination</th>
+                  <th scope="col">Frequency(min)</th>
+                  <th scope="col">Next Arrival</th>
+                  <th scope="col">MInutes Away</th>
+            </tr>
+          </thead>
+          <tbody id="trainTable">
+            <tr>
+                  <td>Trenton Express</td>
+                  <td>Trenton</td>
+                  <td>25</td>
+                  <td>17:35 </td>
+                  <td>10</td>
+            </tr>
+            <tr>
+                  <td>Oregon Trail</td>
+                  <td>Salem, Oregon</td>
+                  <td>3600</td>
+                  <td>13:39</td>
+                  <td>1154</td>
+            </tr>
+            <tr>
+                  <td>Midnight Carriage</td>
+                  <td>Philadelphia</td>
+                  <td>15</td>
+                  <td>15:35</td>
+                  <td>10</td>
+            </tr>
+            <tr>
+                  <td>Sing Sing Caravan</td>
+                  <td>Atlanta</td>
+                  <td>45</td>
+                  <td>05:53 </td>
+                  <td>28</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>  
+  
+    <div class="container">
+        <form>
+              <h6 >Add Train</h6>
+              <div class="form-group">
+                <label for="input-TrainName">Train Name</label>
+                <input type="text" class="form-control" id="input-TrainName" placeholder="Enter Train Name">
+              </div>
+              <div class="form-group">
+                <label for="input-Destination">Destination</label>
+                <input type="text" class="form-control" id="input-Destination" placeholder="Enter Destination">
+              </div>
+              <div class="form-group">
+                <label for="input-TrainTime">First Train Time(HH:mm - military time)</label>
+                <input type="time" class="form-control" id="input-TrainTime">
+              </div>
+              <div class="form-group">
+                <label for="input-Frequency">Frequency (min)</label>
+                <input type="number" class="form-control" id="input-Frequency" placeholder="Frequency (min)">
+              </div>
+      
+              <button type="submit" class="btn btn-primary" id="add-Train">Submit</button>
+      </form>
+     </div>   
+    <script type="text/javascript" src="logic.js"></script>
+</body>
+</html>
